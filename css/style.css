@@ -13,3 +13,19 @@
 .present:hover {
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.box {
+  flex: 50%; /* これにより、2つのボックスが1行に収まります */
+  box-sizing: border-box;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
