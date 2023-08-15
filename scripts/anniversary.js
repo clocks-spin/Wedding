@@ -27,7 +27,7 @@ function showAnniversary() {
 
 /*==== 日数 ====*/
 //経過日数を計算
-	var D =　now.getDate() - begin.getDate();
+	var D = now.getDate() - begin.getDate();
 
 
 //> 日数がマイナスの場合

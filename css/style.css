@@ -1,0 +1,15 @@
+/* CSS Document */
+
+.present {
+  display: inline-block;
+  padding:5px 10px;
+  color: #FFF;
+  text-decoration :none;
+  background: skyblue;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: .3s;
+}
+
+.present:hover {
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
