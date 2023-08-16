@@ -1,48 +1,23 @@
 // JavaScript Document
 function nextMeiBirth() {
 
-/*==== 日付オブジェクト =====*/
-//現在時刻
-	var now = new Date();
+// 現在の日付を取得
+var now = new Date();
 
-//次の誕生日
-var birthday = new Date();
-  birthday.setMonth(5-1);
-  birthday.setDate(29);
+// 今年の5月29日7時14分の日付オブジェクトを作成
+var targetDateThisYear = new Date(now.getFullYear(), 4, 29, 7, 14, 0);
 
-//残り日数
-var ms = birthday.getTime() - now.getTime();
-  if (ms <= 0){
-    var by = birthday.getFullYear();
-    birthday.setFullYear(by+1);
-   ms = birthday.getTime() - now.getTime();
-  }
-var days = ms / (24 * 60 * 60 * 1000);
-days = Math.ceil(days);
+// 現在の日付が5月29日7時14分以降の場合、次の年の5月29日7時14分の日付オブジェクトを作成
+if (now > targetDateThisYear) {
+    targetDateThisYear.setFullYear(targetDateThisYear.getFullYear() + 1);
+}
 
-//>今日の経過秒数
-var now0 = new Date(new Date().setHours(7, 14, 0, 0));
-var nowV = (now0 - (now - now.getMilliseconds())) / 1000;
-
-/*==== 時間 ====*/
-var hh = Math.floor(nowV / 60 / 60);
-var HH = Math.floor(nowV / 60 / 60);
-	if(HH<0){
-		days--;
-		HH += 24;
-		}
-
-/*==== 分 ====*/
-var mm = hh * 60;
-var MM = Math.floor(nowV / 60) - mm;
-
-/*==== 表示 ====*/
-var time = days + "日と";
-if(HH){ time += HH+"時間";}
-if(MM){ time += MM+"分";}
+// 両方の日付の間のミリ秒の差を計算し、それを秒に変換
+var remainingMilliseconds = targetDateThisYear - now;
+var remainingSeconds = Math.floor(remainingMilliseconds / 1000);
 
 
-document.getElementById("NextMeiBirthday").innerHTML = ("次の誕生日まであと"+time+"です。");
+document.getElementById("NextMeiBirthday").innerHTML = (remainingSeconds);
 	
 }
 setInterval(nextMeiBirth,500);

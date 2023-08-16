@@ -28,4 +28,21 @@
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  flex-direction: column; /* 子要素を縦方向に並べる */
+  background: linear-gradient(to bottom, blue, pink);
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
+  letter-spacing: 1.5px;  /* 文字間隔を広げる */
+}
+
+.name-text {
+  font-size: 32px;
+}
+
+.remaining {
+  font-size: 64px;
+  letter-spacing: 20px;
 }
